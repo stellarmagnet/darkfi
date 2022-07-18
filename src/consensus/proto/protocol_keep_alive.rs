@@ -68,7 +68,6 @@ impl ProtocolKeepAlive {
                         "ProtocolKeepAlive::handle_receive_keep_alive(): p2p broadcast failed: {}",
                         e
                     );
-                    continue
                 };
             }
         }
