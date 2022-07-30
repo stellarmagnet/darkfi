@@ -3,8 +3,7 @@ use crate::{
         block::{BlockOrder, BlockResponse},
         ValidatorStatePtr,
     },
-    net,
-    Result,
+    net, Result,
 };
 use log::{debug, info, warn};
 

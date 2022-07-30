@@ -406,7 +406,7 @@ impl ValidatorState {
             warn!("Proposer ({}) signature could not be verified", proposal.block.metadata.address);
             return Ok(None)
         }
-        
+
         debug!("receive_proposal(): Starting state transition validation");
         let canon_state_clone = self.state_machine.lock().await.clone();
         let mem_state = MemoryState::new(canon_state_clone);
@@ -762,7 +762,7 @@ impl ValidatorState {
     // ==========================
     // State transition functions
     // ==========================
-    
+
     /// Validate and append to canonical state received blocks.
     pub async fn receive_blocks(&mut self, blocks: &[BlockInfo]) -> Result<()> {
         // Verify state transitions for all blocks and their respective transactions.
@@ -790,7 +790,7 @@ impl ValidatorState {
 
         Ok(())
     }
-    
+
     /// Validate and append to canonical state received finalized block.
     /// Returns boolean flag indicating already existing block.
     pub async fn receive_finalized_block(&mut self, block: BlockInfo) -> Result<bool> {

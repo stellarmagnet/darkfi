@@ -65,7 +65,7 @@ impl ProtocolTx {
             };
 
             let tx_copy = (*tx).clone();
-            
+
             // Nodes use unconfirmed_txs vector as seen_txs pool.
             if self.state.write().await.append_tx(tx_copy.clone()).await {
                 if let Err(e) = self.p2p.broadcast_with_exclude(tx_copy, &exclude_list).await {
